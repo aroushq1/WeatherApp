@@ -14,8 +14,6 @@ The project is structured as follows:
 
 WeatherApp/ │ ├── app.py # Main Flask application script ├── model.py # Script to train the machine learning model ├── london_weather.csv # Dataset used for training the model ├── templates/ │ └── index.html # HTML template for the web interface └── static/ └── style.css # Custom CSS for the app's styling
 
-markdown
-Copy code
 
 ## Dependencies
 
