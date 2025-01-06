@@ -29,7 +29,7 @@ You can install all the dependencies by running:
 
 pip install -r requirements.txt
 
-##requirements.txt
+# requirements.txt
 To install the dependencies, create a requirements.txt file with the following contents:
 Flask==2.0.2
 pandas==1.3.3
