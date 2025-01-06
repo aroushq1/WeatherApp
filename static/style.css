@@ -132,20 +132,31 @@ footer {
 
 /* Media Query for Mobile */
 @media (max-width: 600px) {
-    .container {
-        padding: 20px;
+    html, body {
+        font-size: 14px; /* Adjust text size */
     }
 
     .bubbly-title {
-        font-size: 36px;
+        font-size: 36px; /* Adjust title size for small screens */
+        margin-top: 40px; /* Decrease top margin for smaller screens */
+    }
+
+    .container {
+        padding: 20px; /* Decrease padding inside container */
     }
 
     .form-container {
-        padding: 20px;
+        padding: 20px; /* Adjust padding inside form container */
     }
 
     .form-group input,
     button {
-        font-size: 14px;
+        font-size: 14px; /* Adjust font size for inputs and button */
+        padding: 10px; /* Adjust padding for better fit */
+    }
+
+    /* Make background image adjust properly */
+    body {
+        background-size: cover; /* Ensure the background fits well */
     }
 }
