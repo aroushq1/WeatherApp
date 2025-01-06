@@ -3,34 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Prediction</title>
+    <title>London Weather Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>London Weather Prediction</h1>
-    <form action="/predict" method="POST">
-        <label for="cloud_cover">Cloud Cover (%):</label>
-        <input type="number" id="cloud_cover" name="cloud_cover" step="0.1" required>
-        <br><br>
-        <label for="sunshine">Sunshine (hours):</label>
-        <input type="number" id="sunshine" name="sunshine" step="0.1" required>
-        <br><br>
-        <label for="global_radiation">Global Radiation (W/m²):</label>
-        <input type="number" id="global_radiation" name="global_radiation" step="0.1" required>
-        <br><br>
-        <label for="pressure">Pressure (hPa):</label>
-        <input type="number" id="pressure" name="pressure" step="0.1" required>
-        <br><br>
-        <label for="snow_depth">Snow Depth (cm):</label>
-        <input type="number" id="snow_depth" name="snow_depth" step="0.1" required>
-        <br><br>
-        <label for="year">Year:</label>
-        <input type="number" id="year" name="year" required>
-        <br><br>
-        <label for="month">Month:</label>
-        <input type="number" id="month" name="month" required>
-        <br><br>
-        <input type="submit" value="Predict">
-    </form>
-    <h2>{{ prediction_text }}</h2>
+    <div class="container">
+        <header>
+            <h1 class="bubbly-title">London Weather Predictor</h1>
+        </header>
+        
+        <main>
+            <div class="form-container">
+                <h2>Enter Weather Data</h2>
+                <form method="POST" action="/predict">
+                    <div class="form-group">
+                        <label for="cloud_cover">Cloud Cover (%)</label>
+                        <input type="number" id="cloud_cover" name="cloud_cover" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sunshine">Sunshine (hours)</label>
+                        <input type="number" id="sunshine" name="sunshine" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="global_radiation">Global Radiation (MJ/m²)</label>
+                        <input type="number" id="global_radiation" name="global_radiation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pressure">Pressure (hPa)</label>
+                        <input type="number" id="pressure" name="pressure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="snow_depth">Snow Depth (cm)</label>
+                        <input type="number" id="snow_depth" name="snow_depth" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" name="year" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">Month</label>
+                        <input type="number" id="month" name="month" required>
+                    </div>
+                    <button type="submit">Predict Temperature</button>
+                </form>
+            </div>
+
+            {% if prediction_text %}
+            <div class="result">
+                <h3>{{ prediction_text }}</h3>
+            </div>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 London Weather Predictor. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
